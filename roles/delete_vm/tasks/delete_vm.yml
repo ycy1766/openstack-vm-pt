@@ -1,0 +1,9 @@
+---
+- name: remove an instance
+  os_server:
+    cloud: daou_cloud
+    name: "{{ item.name }}"
+    state: absent
+  with_items:
+    - "{{ vm_list }}"
+

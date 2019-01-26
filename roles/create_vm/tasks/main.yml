@@ -1,0 +1,4 @@
+---
+   - import_tasks: create_volume.yml
+   - import_tasks: create_key.yml
+   - import_tasks: create_vm.yml

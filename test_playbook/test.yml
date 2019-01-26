@@ -1,0 +1,16 @@
+---
+- name: Test Openstack os_server
+  become: true
+  hosts: vm
+  tasks:
+
+  - name: add sysadmin user for engineers to use
+    shell: "touch 1"
+
+  - name: install the latest version of Apache
+    yum:
+      name: httpd
+      state: latest
+
+
+

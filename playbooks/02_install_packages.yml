@@ -1,0 +1,19 @@
+---
+- name: install packages
+  become: true
+  hosts: vm
+
+  tasks:
+  - name: install epel repository
+    yum:
+      name: epel-release
+      state: latest
+
+  - name: install stress packages
+    yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - screen
+      - stress-ng
+

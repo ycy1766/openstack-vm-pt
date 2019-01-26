@@ -1,0 +1,29 @@
+---
+- name: Test Openstack os_server
+  become: true
+  hosts: deploy
+
+  tasks:
+  - name: create boot volume from image
+    os_volume:
+      cloud: daou_cloud
+      state: present
+      size: 50
+      display_name: cy_os_2_vol
+      image: CentOS-7-64-1708
+      timeout: 300
+      wait: yes
+
+  - name: launch an instance
+    os_server:
+      cloud: daou_cloud 
+      key_name: deploy_root_key
+      timeout: 300
+      flavor: m1.medium
+      security_groups: default
+      nics:
+        - net-id: 9966eb46-83bc-4c84-837d-2b3497dfc43f
+      floating_ips:
+        - 115.71.12.16
+      name: cy_os_2
+      boot_volume: cy_os_2_vol

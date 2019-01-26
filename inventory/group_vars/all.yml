@@ -1,0 +1,18 @@
+
+###########################
+## sterss-ng variable
+###########################
+test_duration: 60
+
+# cpu 
+cpu_workers: 1
+cpu_load: 20 
+
+stress_tmp_dir: "/stress"
+
+
+### vm information
+vm_list:
+  - {name: "test_vm_1", vol_size: "40", flavor: "m1.medium", fip: "115.71.12.30"}
+  - {name: "test_vm_3", vol_size: "40", flavor: "m1.medium", fip: "115.71.12.31"}
+  - {name: "test_vm_2", vol_size: "40", flavor: "m1.medium", fip: "115.71.12.32"}

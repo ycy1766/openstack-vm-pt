@@ -1,0 +1,6 @@
+---
+- name: create vm/volume
+  hosts: deploy
+
+  roles:
+  - create_vm

@@ -1,0 +1,18 @@
+---
+- name: test Openstack os_server
+  become: true
+  hosts: deploy
+
+  tasks:
+  - name: remove an instance
+    os_server:
+      name: cy_os_2
+      state: absent
+
+  - name: remove volume
+    os_volume:
+      name: cy_os_2_vol
+      state: absent
+  
+ 
+

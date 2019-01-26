@@ -1,0 +1,6 @@
+---
+- name: delete vm/volume
+  hosts: deploy
+
+  roles:
+  - delete_vm

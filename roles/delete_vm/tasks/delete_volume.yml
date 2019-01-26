@@ -1,0 +1,9 @@
+---
+- name: remove volume
+  os_volume:
+    cloud: daou_cloud
+    name: "{{ item.name }}_vol"
+    state: absent
+  with_items:
+    - "{{ vm_list }}"
+

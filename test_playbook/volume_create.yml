@@ -1,0 +1,14 @@
+---
+- name: Test Openstack os_volume
+  become: true
+  hosts: deploy
+
+  tasks:
+  - name: create 1g test volume
+    os_volume:
+      state: present
+      cloud: daou_cloud
+      size: 1
+      display_name: test_vol_1g_cy
+
+

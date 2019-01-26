@@ -1,0 +1,13 @@
+---
+- name: create boot volume from image
+  os_volume:
+    cloud: daou_cloud
+    state: present
+    size: "{{ item.vol_size  }}"
+    display_name: "{{ item.name }}_vol"
+    image:  CentOS-7-x86_64-GenericCloud-1808 
+    timeout: 300
+    wait: yes
+  with_items:
+    - "{{ vm_list }}"
+

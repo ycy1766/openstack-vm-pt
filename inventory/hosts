@@ -1,0 +1,21 @@
+[deploy]
+cloud-deploy ansible_host=10.0.0.11
+
+[deploy:vars]
+ansible_user=root
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+
+[vm]
+test_vm_1 ansible_host=115.71.12.30
+test_vm_2 ansible_host=115.71.12.31
+test_vm_3 ansible_host=115.71.12.32
+
+[vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
