@@ -1,0 +1,16 @@
+---
+- name: launch an pts instance
+  os_server:
+    cloud: daou_cloud
+    key_name: test_key
+    timeout: 300
+    flavor: "{{ item.flavor }}"
+    security_groups: default
+    nics:
+      - net-id: 9966eb46-83bc-4c84-837d-2b3497dfc43f
+    floating_ips:
+      - "{{ item.fip }}"
+    name: "{{ item.name }}"
+    boot_volume: "{{ item.name  }}_vol"
+  with_items:
+    - "{{ pts_vm_list }}"

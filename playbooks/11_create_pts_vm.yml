@@ -1,0 +1,6 @@
+---
+- name: create pts vm/volume
+  hosts: deploy
+
+  roles:
+  - create_pts_vm

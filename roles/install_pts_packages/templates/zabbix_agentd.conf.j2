@@ -1,0 +1,7 @@
+LogType=file
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=0
+Server={{ ansible_eth0.ipv4.address }}
+Timeout=30
+Hostname={{ ansible_eth0.ipv4.address }}

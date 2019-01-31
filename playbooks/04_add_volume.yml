@@ -1,0 +1,6 @@
+---
+- name: add volume
+  hosts: deploy
+
+  roles:
+  - add_volume

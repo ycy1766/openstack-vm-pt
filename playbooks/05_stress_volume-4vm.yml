@@ -1,0 +1,14 @@
+---
+- name: fio for vm
+  become: true
+  gather_facts: no 
+  hosts: all
+  tasks:
+   - include: 2vm-bench.yml  bs={{ item.bs }} perf={{ item.perf }}
+     with_items: 
+      - {bs: "4k", perf: "read"} 
+      - {bs: "4k", perf: "write"} 
+      - {bs: "4k", perf: "rw"} 
+      - {bs: "8k", perf: "read"} 
+      - {bs: "8k", perf: "write"} 
+      - {bs: "8k", perf: "rw"} 

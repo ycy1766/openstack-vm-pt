@@ -1,0 +1,7 @@
+- name: test
+  shell: "fio --directory=/mnt/vdb --name test_file --direct=1 --rw=rand{{ perf }} --bs={{ bs }} --size=1G --numjobs=16 --runtime=10 --group_reporting --ioengine=libaio --norandommap --eta-newline=1 --output=2vm-{{ bs }}-{{ perf }}"
+  when: "inventory_hostname in groups['2vm']"
+
+- name: flush cache
+  shell: "sudo echo 3 | sudo tee /proc/sys/vm/drop_caches && sudo sync;"
+  when: "inventory_hostname in groups['ceph_osds']"  

@@ -1,0 +1,12 @@
+---
+- name: create keypair locally
+  shell: ssh-keygen -t rsa -q -N "" -C test_key -b 4096 -f /root/.ssh/test_key
+  args:
+    creates: /root/.ssh/test_key
+
+- name: add new key into OS
+  os_keypair:
+    state: present
+    name: test_key
+    public_key_file: /root/.ssh/test_key.pub
+

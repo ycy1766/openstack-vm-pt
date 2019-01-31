@@ -1,0 +1,13 @@
+---
+- name: create vm/volume
+  hosts: vm
+
+  tasks:
+   - name: mem flush 
+     shell: 
+   - name: 2vm benchmark
+   - name: 4vm benchmark
+   - name: 4vm benchmark
+   - name: 6vm benchmark
+   - name: 8vm benchmark
+   - name: 10vm benchmark

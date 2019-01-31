@@ -1,18 +1,234 @@
 
 ###########################
-## sterss-ng variable
+## sterss-ng variable default
 ###########################
 test_duration: 60
-
 # cpu 
-cpu_workers: 1
-cpu_load: 20 
+cpu_workers: 2
+cpu_load: 100
 
 stress_tmp_dir: "/stress"
 
 
-### vm information
+### test vm information
 vm_list:
-  - {name: "test_vm_1", vol_size: "40", flavor: "m1.medium", fip: "115.71.12.30"}
-  - {name: "test_vm_3", vol_size: "40", flavor: "m1.medium", fip: "115.71.12.31"}
-  - {name: "test_vm_2", vol_size: "40", flavor: "m1.medium", fip: "115.71.12.32"}
+#  - {name: "vm-1", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.30"}
+#  - {name: "vm-2", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.31"}
+#  - {name: "vm-3", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.12.32"}
+#  - {name: "vm-4", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.12.33"}
+
+#  - {name: "vm-5", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.39"}
+#  - {name: "vm-6", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.40"}
+#  - {name: "vm-7", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.12.42"}
+#  - {name: "vm-8", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.12.43"}
+
+#  - {name: "vm-9",  vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.44"}
+#  - {name: "vm-10", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.47"}
+#  - {name: "vm-11", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.12.48"}
+#  - {name: "vm-12", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.11.133"}
+
+#  - {name: "vm-13", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.11.135"}
+#  - {name: "vm-14", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.11.137"}
+#  - {name: "vm-15", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.11.138"}
+#  - {name: "vm-16", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.11.142"}
+
+#  - {name: "vm-17",  vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.50"}
+#  - {name: "vm-18", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.51"}
+#  - {name: "vm-19", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.12.57"}
+#  - {name: "vm-20", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.12.67"}
+
+#  - {name: "vm-21", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.37"}
+#  - {name: "vm-22", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.36"}
+#  - {name: "vm-23", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.12.45"}
+#  - {name: "vm-24", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.11.158"}
+
+#  - {name: "vm-25",  vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.35"}
+#  - {name: "vm-26", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.11.155"}
+#  - {name: "vm-27", vol_size: "100", flavor: "m1.stress.middle", fip: "115.71.12.63"}
+#  - {name: "vm-28", vol_size: "100", flavor: "m1.stress.large", fip: "115.71.12.28"}
+
+#  - {name: "vm-DB", vol_size: "100", flavor: "m1.stress.DB", fip: "115.71.12.66"}
+
+- {name: "vm-51", vol_size: "100", flavor: "m1.stress", fip: "115.71.12.21"}
+
+
+#- {name: "vm-61", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.18"}
+#- {name: "vm-62", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.16"}
+#- {name: "vm-63", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.29"}
+#- {name: "vm-64", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.27"}
+#- {name: "vm-65", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.38"}
+
+
+- {name: "vm-66", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.66" }
+- {name: "vm-67", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.11.136" }
+- {name: "vm-68", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.12.54" }
+- {name: "vm-69", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.11.149" }
+- {name: "vm-70", vol_size: "100", flavor: "m1.stress.small", fip: "115.71.11.134" }
+
+vm_volume:
+- {name: "vm-66", vol_size: "100", dev_name: "01"}
+- {name: "vm-66", vol_size: "100", dev_name: "02"}
+- {name: "vm-66", vol_size: "100", dev_name: "03"}
+- {name: "vm-66", vol_size: "100", dev_name: "04"}
+- {name: "vm-66", vol_size: "100", dev_name: "05"}
+- {name: "vm-66", vol_size: "100", dev_name: "06"}
+- {name: "vm-66", vol_size: "100", dev_name: "07"}
+- {name: "vm-66", vol_size: "100", dev_name: "08"}
+- {name: "vm-66", vol_size: "100", dev_name: "09"}
+- {name: "vm-66", vol_size: "100", dev_name: "10"}
+- {name: "vm-66", vol_size: "100", dev_name: "11"}
+- {name: "vm-66", vol_size: "100", dev_name: "12"}
+- {name: "vm-66", vol_size: "100", dev_name: "13"}
+- {name: "vm-66", vol_size: "100", dev_name: "14"}
+- {name: "vm-66", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-67", vol_size: "100", dev_name: "01"}
+- {name: "vm-67", vol_size: "100", dev_name: "02"}
+- {name: "vm-67", vol_size: "100", dev_name: "03"}
+- {name: "vm-67", vol_size: "100", dev_name: "04"}
+- {name: "vm-67", vol_size: "100", dev_name: "05"}
+- {name: "vm-67", vol_size: "100", dev_name: "06"}
+- {name: "vm-67", vol_size: "100", dev_name: "07"}
+- {name: "vm-67", vol_size: "100", dev_name: "08"}
+- {name: "vm-67", vol_size: "100", dev_name: "09"}
+- {name: "vm-67", vol_size: "100", dev_name: "10"}
+- {name: "vm-67", vol_size: "100", dev_name: "11"}
+- {name: "vm-67", vol_size: "100", dev_name: "12"}
+- {name: "vm-67", vol_size: "100", dev_name: "13"}
+- {name: "vm-67", vol_size: "100", dev_name: "14"}
+- {name: "vm-67", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-68", vol_size: "100", dev_name: "01"}
+- {name: "vm-68", vol_size: "100", dev_name: "02"}
+- {name: "vm-68", vol_size: "100", dev_name: "03"}
+- {name: "vm-68", vol_size: "100", dev_name: "04"}
+- {name: "vm-68", vol_size: "100", dev_name: "05"}
+- {name: "vm-68", vol_size: "100", dev_name: "06"}
+- {name: "vm-68", vol_size: "100", dev_name: "07"}
+- {name: "vm-68", vol_size: "100", dev_name: "08"}
+- {name: "vm-68", vol_size: "100", dev_name: "09"}
+- {name: "vm-68", vol_size: "100", dev_name: "10"}
+- {name: "vm-68", vol_size: "100", dev_name: "11"}
+- {name: "vm-68", vol_size: "100", dev_name: "12"}
+- {name: "vm-68", vol_size: "100", dev_name: "13"}
+- {name: "vm-68", vol_size: "100", dev_name: "14"}
+- {name: "vm-68", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-69", vol_size: "100", dev_name: "01"}
+- {name: "vm-69", vol_size: "100", dev_name: "02"}
+- {name: "vm-69", vol_size: "100", dev_name: "03"}
+- {name: "vm-69", vol_size: "100", dev_name: "04"}
+- {name: "vm-69", vol_size: "100", dev_name: "05"}
+- {name: "vm-69", vol_size: "100", dev_name: "06"}
+- {name: "vm-69", vol_size: "100", dev_name: "07"}
+- {name: "vm-69", vol_size: "100", dev_name: "08"}
+- {name: "vm-69", vol_size: "100", dev_name: "09"}
+- {name: "vm-69", vol_size: "100", dev_name: "10"}
+- {name: "vm-69", vol_size: "100", dev_name: "11"}
+- {name: "vm-69", vol_size: "100", dev_name: "12"}
+- {name: "vm-69", vol_size: "100", dev_name: "13"}
+- {name: "vm-69", vol_size: "100", dev_name: "14"}
+- {name: "vm-69", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-70", vol_size: "100", dev_name: "01"}
+- {name: "vm-70", vol_size: "100", dev_name: "02"}
+- {name: "vm-70", vol_size: "100", dev_name: "03"}
+- {name: "vm-70", vol_size: "100", dev_name: "04"}
+- {name: "vm-70", vol_size: "100", dev_name: "05"}
+- {name: "vm-70", vol_size: "100", dev_name: "06"}
+- {name: "vm-70", vol_size: "100", dev_name: "07"}
+- {name: "vm-70", vol_size: "100", dev_name: "08"}
+- {name: "vm-70", vol_size: "100", dev_name: "09"}
+- {name: "vm-70", vol_size: "100", dev_name: "10"}
+- {name: "vm-70", vol_size: "100", dev_name: "11"}
+- {name: "vm-70", vol_size: "100", dev_name: "12"}
+- {name: "vm-70", vol_size: "100", dev_name: "13"}
+- {name: "vm-70", vol_size: "100", dev_name: "14"}
+- {name: "vm-70", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-61", vol_size: "100", dev_name: "01"}
+- {name: "vm-61", vol_size: "100", dev_name: "02"}
+- {name: "vm-61", vol_size: "100", dev_name: "03"}
+- {name: "vm-61", vol_size: "100", dev_name: "04"}
+- {name: "vm-61", vol_size: "100", dev_name: "05"}
+- {name: "vm-61", vol_size: "100", dev_name: "06"}
+- {name: "vm-61", vol_size: "100", dev_name: "07"}
+- {name: "vm-61", vol_size: "100", dev_name: "08"}
+- {name: "vm-61", vol_size: "100", dev_name: "09"}
+- {name: "vm-61", vol_size: "100", dev_name: "10"}
+- {name: "vm-61", vol_size: "100", dev_name: "11"}
+- {name: "vm-61", vol_size: "100", dev_name: "12"}
+- {name: "vm-61", vol_size: "100", dev_name: "13"}
+- {name: "vm-61", vol_size: "100", dev_name: "14"}
+- {name: "vm-61", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-62", vol_size: "100", dev_name: "01"}
+- {name: "vm-62", vol_size: "100", dev_name: "02"}
+- {name: "vm-62", vol_size: "100", dev_name: "03"}
+- {name: "vm-62", vol_size: "100", dev_name: "04"}
+- {name: "vm-62", vol_size: "100", dev_name: "05"}
+- {name: "vm-62", vol_size: "100", dev_name: "06"}
+- {name: "vm-62", vol_size: "100", dev_name: "07"}
+- {name: "vm-62", vol_size: "100", dev_name: "08"}
+- {name: "vm-62", vol_size: "100", dev_name: "09"}
+- {name: "vm-62", vol_size: "100", dev_name: "10"}
+- {name: "vm-62", vol_size: "100", dev_name: "11"}
+- {name: "vm-62", vol_size: "100", dev_name: "12"}
+- {name: "vm-62", vol_size: "100", dev_name: "13"}
+- {name: "vm-62", vol_size: "100", dev_name: "14"}
+- {name: "vm-62", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-63", vol_size: "100", dev_name: "01"}
+- {name: "vm-63", vol_size: "100", dev_name: "02"}
+- {name: "vm-63", vol_size: "100", dev_name: "03"}
+- {name: "vm-63", vol_size: "100", dev_name: "04"}
+- {name: "vm-63", vol_size: "100", dev_name: "05"}
+- {name: "vm-63", vol_size: "100", dev_name: "06"}
+- {name: "vm-63", vol_size: "100", dev_name: "07"}
+- {name: "vm-63", vol_size: "100", dev_name: "08"}
+- {name: "vm-63", vol_size: "100", dev_name: "09"}
+- {name: "vm-63", vol_size: "100", dev_name: "10"}
+- {name: "vm-63", vol_size: "100", dev_name: "11"}
+- {name: "vm-63", vol_size: "100", dev_name: "12"}
+- {name: "vm-63", vol_size: "100", dev_name: "13"}
+- {name: "vm-63", vol_size: "100", dev_name: "14"}
+- {name: "vm-63", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-64", vol_size: "100", dev_name: "01"}
+- {name: "vm-64", vol_size: "100", dev_name: "02"}
+- {name: "vm-64", vol_size: "100", dev_name: "03"}
+- {name: "vm-64", vol_size: "100", dev_name: "04"}
+- {name: "vm-64", vol_size: "100", dev_name: "05"}
+- {name: "vm-64", vol_size: "100", dev_name: "06"}
+- {name: "vm-64", vol_size: "100", dev_name: "07"}
+- {name: "vm-64", vol_size: "100", dev_name: "08"}
+- {name: "vm-64", vol_size: "100", dev_name: "09"}
+- {name: "vm-64", vol_size: "100", dev_name: "10"}
+- {name: "vm-64", vol_size: "100", dev_name: "11"}
+- {name: "vm-64", vol_size: "100", dev_name: "12"}
+- {name: "vm-64", vol_size: "100", dev_name: "13"}
+- {name: "vm-64", vol_size: "100", dev_name: "14"}
+- {name: "vm-64", vol_size: "100", dev_name: "15"}
+
+- {name: "vm-65", vol_size: "100", dev_name: "01"}
+- {name: "vm-65", vol_size: "100", dev_name: "02"}
+- {name: "vm-65", vol_size: "100", dev_name: "03"}
+- {name: "vm-65", vol_size: "100", dev_name: "04"}
+- {name: "vm-65", vol_size: "100", dev_name: "05"}
+- {name: "vm-65", vol_size: "100", dev_name: "06"}
+- {name: "vm-65", vol_size: "100", dev_name: "07"}
+- {name: "vm-65", vol_size: "100", dev_name: "08"}
+- {name: "vm-65", vol_size: "100", dev_name: "09"}
+- {name: "vm-65", vol_size: "100", dev_name: "10"}
+- {name: "vm-65", vol_size: "100", dev_name: "11"}
+- {name: "vm-65", vol_size: "100", dev_name: "12"}
+- {name: "vm-65", vol_size: "100", dev_name: "13"}
+- {name: "vm-65", vol_size: "100", dev_name: "14"}
+- {name: "vm-65", vol_size: "100", dev_name: "15"}
+
+### pts vm information
+pts_vm_list:
+  - {name: "pts_vm_1", vol_size: "100", flavor: "m1.stress", fip: "115.71.12.25"}
+
+
+

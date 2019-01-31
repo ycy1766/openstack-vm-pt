@@ -1,0 +1,24 @@
+---
+- name: fio for vm
+  become: true
+  hosts: all
+
+  tasks:
+
+  - name: test
+    shell: "fio --directory=/mnt/vdb --name test_file --direct=1 --rw=randread --bs=4K --size=1G --numjobs=16 --runtime=600 --group_reporting --ioengine=libaio --norandommap --eta-newline=1"
+    when: "'vm-61' in inventory_hostname or  'vm-62' in inventory_hostname " 
+
+  - name: flush cache
+    shell: "sudo echo 3 | sudo tee /proc/sys/vm/drop_caches && sudo sync;"
+    when: "inventory_hostname in groups['ceph_osds']"
+
+
+  - name: test
+    shell: "fio --directory=/mnt/vdb --name test_file --direct=1 --rw=randread --bs=4K --size=1G --numjobs=16 --runtime=600 --group_reporting --ioengine=libaio --norandommap --eta-newline=1"
+    when: "'vm-61' in inventory_hostname or  'vm-62' in inventory_hostname  or  'vm-63' in inventory_hostname  or  'vm-64'   in invtory_hostname"
+    
+  - name: flush cache
+    shell: "sudo echo 3 | sudo tee /proc/sys/vm/drop_caches && sudo sync;"
+    when: "inventory_hostname in groups['ceph_osds']"
+

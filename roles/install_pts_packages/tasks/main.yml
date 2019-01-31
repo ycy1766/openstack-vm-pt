@@ -1,0 +1,3 @@
+---
+   - import_tasks: pre_cofig.yml
+   - import_tasks: install_monitoring.yml

@@ -4,6 +4,10 @@
   hosts: vm
 
   tasks:
+  - lineinfile:
+      path: /root/.ssh/authorized_keys
+      line: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDL1ETUdkQf8U6D+xT6W2eW6z0UI2BVGCYZ9Gb5E/9x4T+oXH9ibD9a2UJ7xsOnLML8b/N21WpC61X/ovfzwpCEAp8k1lO5ztXjtG4wL+jjuibd0y1rOZ6tsFmSxb/xe1oX4on4M4zS0AKNWhLZrgBqeArNJhFOas0r+teGpSgU2LD9R1axGezJx+yPBwQF/7E2OtZlGNRMcdJlLKbzdquQX9ob7B75S5hcVzNi6vjeRzinSsQlrONfBc0yKbBMraEeoEmIaD0xjWCD8zsWCWB1AiWsaujTPj4pVciPcX85e0nlr/FxAwarNuwKW8o8xdfE2/xqOgWs8wD6xxD0tp5v root@deploy"
+
   - name: install epel repository
     yum:
       name: epel-release
@@ -16,4 +20,11 @@
     with_items:
       - screen
       - stress-ng
+      - java-1.8.0-openjdk
+
+  - name: copy vdbench files
+    copy:
+      src: /root/osc/vdbench 
+      dest: /root/osc/  
+      mode: 777
 

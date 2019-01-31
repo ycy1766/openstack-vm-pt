@@ -1,0 +1,6 @@
+---
+- name: delete pts vm/volume
+  hosts: deploy
+
+  roles:
+  - delete_pts_vm

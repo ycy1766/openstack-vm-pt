@@ -1,0 +1,6 @@
+---
+- name: install_pts_packages
+  hosts: pts_vm
+
+  roles:
+  - install_pts_packages

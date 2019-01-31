@@ -9,9 +9,58 @@ ansible_port=22
 
 
 [vm]
-test_vm_1 ansible_host=115.71.12.30
-test_vm_2 ansible_host=115.71.12.31
-test_vm_3 ansible_host=115.71.12.32
+#vm-1 ansible_host=115.71.12.30 cpu_workers=2 cpu_load=30 test_duration=1500
+#vm-2 ansible_host=115.71.12.31 cpu_workers=2 cpu_load=50 test_duration=1500
+#vm-3 ansible_host=115.71.12.32 cpu_workers=4 cpu_load=40 test_duration=1500
+#vm-4 ansible_host=115.71.12.33 cpu_workers=8 cpu_load=60 test_duration=1500
+
+#vm-5 ansible_host=115.71.12.39 cpu_workers=2 cpu_load=30 test_duration=1500
+#vm-6 ansible_host=115.71.12.40 cpu_workers=2 cpu_load=50 test_duration=1500
+#vm-7 ansible_host=115.71.12.42 cpu_workers=4 cpu_load=40 test_duration=1500
+#vm-8 ansible_host=115.71.12.43 cpu_workers=8 cpu_load=60 test_duration=1500
+
+#vm-9 ansible_host=115.71.12.44 cpu_workers=2 cpu_load=30 test_duration=1500
+#vm-10 ansible_host=115.71.12.47 cpu_workers=2 cpu_load=50 test_duration=1500
+#vm-11 ansible_host=115.71.12.48 cpu_workers=4 cpu_load=40 test_duration=1500
+#vm-12 ansible_host=115.71.11.133 cpu_workers=8 cpu_load=60 test_duration=1500
+
+#vm-13 ansible_host=115.71.11.135 cpu_workers=2 cpu_load=30 test_duration=1500
+#vm-14 ansible_host=115.71.11.137 cpu_workers=2 cpu_load=50 test_duration=1500
+#vm-15 ansible_host=115.71.11.138 cpu_workers=4 cpu_load=30 test_duration=1500
+#vm-16 ansible_host=115.71.11.142 cpu_workers=8 cpu_load=60 test_duration=1500
+
+#vm-17 ansible_host=115.71.12.50 cpu_workers=2 cpu_load=7 test_duration=1500
+#vm-18 ansible_host=115.71.12.51 cpu_workers=2 cpu_load=10 test_duration=1500
+#vm-19 ansible_host=115.71.12.57 cpu_workers=4 cpu_load=15 test_duration=1500
+#vm-20 ansible_host=115.71.12.67 cpu_workers=8 cpu_load=15 test_duration=1500
+
+#vm-21 ansible_host=115.71.12.37 cpu_workers=2 cpu_load=7 test_duration=1500
+#vm-22 ansible_host=115.71.12.36 cpu_workers=2 cpu_load=10 test_duration=1500
+#vm-23 ansible_host=115.71.12.45 cpu_workers=4 cpu_load=15 test_duration=1500
+#vm-24 ansible_host=115.71.11.158  cpu_workers=8 cpu_load=15 test_duration=1500
+
+#vm-25 ansible_host=115.71.12.35 cpu_workers=2 cpu_load=20 test_duration=1500
+#vm-26 ansible_host=115.71.11.155 cpu_workers=2 cpu_load=20 test_duration=1500
+#vm-27 ansible_host=115.71.12.63 cpu_workers=4 cpu_load=20 test_duration=1500
+#vm-28 ansible_host=115.71.12.28 cpu_workers=8 cpu_load=20 test_duration=1500
+
+#vm-DB ansible_host=115.71.12.66  cpu_workers=32 cpu_load=20 test_duration=1500
+
+#vm-51 ansible_host=115.71.12.21
+
+
+vm-61 ansible_host=115.71.12.18
+vm-62 ansible_host=115.71.12.16
+vm-63 ansible_host=115.71.12.29
+vm-64 ansible_host=115.71.12.27
+vm-65 ansible_host=115.71.12.38
+
+vm-66 ansible_host=115.71.12.66
+vm-67 ansible_host=115.71.11.136
+vm-68 ansible_host=115.71.12.54
+vm-69 ansible_host=115.71.11.149
+vm-70 ansible_host=115.71.11.134
+
 
 [vm:vars]
 ansible_ssh_private_key_file= "~/.ssh/test_key"
@@ -19,3 +68,107 @@ ansible_user=centos
 ansible_connection=ssh
 ansible_become=true
 ansible_port=22
+
+[2vm]
+vm-61 ansible_host=115.71.12.18
+vm-62 ansible_host=115.71.12.16
+
+[2vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+[4vm]
+vm-61 ansible_host=115.71.12.18
+vm-62 ansible_host=115.71.12.16
+vm-63 ansible_host=115.71.12.29
+vm-64 ansible_host=115.71.12.27
+
+[4vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+
+
+[6vm]
+vm-61 ansible_host=115.71.12.18
+vm-62 ansible_host=115.71.12.16
+vm-63 ansible_host=115.71.12.29
+vm-64 ansible_host=115.71.12.27
+vm-65 ansible_host=115.71.12.38
+vm-66 ansible_host=115.71.12.66
+
+
+[6vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+
+[8vm]
+vm-61 ansible_host=115.71.12.18
+vm-62 ansible_host=115.71.12.16
+vm-63 ansible_host=115.71.12.29
+vm-64 ansible_host=115.71.12.27
+vm-65 ansible_host=115.71.12.38
+vm-66 ansible_host=115.71.12.66
+vm-67 ansible_host=115.71.11.136
+vm-68 ansible_host=115.71.12.54
+
+[8vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+[10vm]
+vm-61 ansible_host=115.71.12.18
+vm-62 ansible_host=115.71.12.16
+vm-63 ansible_host=115.71.12.29
+vm-64 ansible_host=115.71.12.27
+vm-65 ansible_host=115.71.12.38
+vm-66 ansible_host=115.71.12.66
+vm-67 ansible_host=115.71.11.136
+vm-68 ansible_host=115.71.12.54
+vm-69 ansible_host=115.71.11.149
+vm-70 ansible_host=115.71.11.134
+
+[10vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+
+
+[pts_vm]
+pts_vm_1 ansible_host=115.71.12.25
+
+[pts_vm:vars]
+ansible_ssh_private_key_file= "~/.ssh/test_key"
+ansible_user=centos
+ansible_connection=ssh
+ansible_become=true
+ansible_port=22
+
+
+[ceph_osds]
+storage001  ansible_host=10.0.0.51
+storage003  ansible_host=10.0.0.53 
+storage004  ansible_host=10.0.0.54 
+
+[all:vars]
+#ansible_user=root
+ansible_user=daou
+ansible_become=true
+ansible_sudo_pass="Ekdnrltnf!@34"
+

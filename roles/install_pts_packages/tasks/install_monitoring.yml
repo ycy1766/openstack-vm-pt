@@ -1,0 +1,44 @@
+---
+
+- name: create monitoring config directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
+- name: create docker-compose.yml file
+  template:
+    src: "docker-compose.yml.j2"
+    dest: "{{ config_directory }}/docker-compose.yml"
+
+- name: execute docker-compose
+  shell: "docker-compose up -d"
+  args:
+    chdir: "{{ config_directory }}"
+
+- name : install zabbix agent
+  shell: "rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-agent-4.0.2-1.el7.x86_64.rpm"
+  ignore_errors: yes
+
+- name: create zabbix agent discovery directory
+  file:
+    path: "/etc/zabbix/discovery.d/"
+    state: directory
+
+- name: copy pcp-discovery.sh file
+  copy:
+    src: pcp-discovery.sh
+    dest: "/etc/zabbix/discovery.d/pcp-discovery.sh"
+    mode: 0777
+
+- name: copy zabbix_agentd.conf
+  template:
+    src: "zabbix_agentd.conf.j2"
+    dest: "/etc/zabbix/zabbix_agentd.conf"
+  register: zabbix_agent
+
+
+- name : enable/start zabbix_agentd systemd
+  systemd:
+    name: zabbix-agent
+    enabled: yes
+    state: started
